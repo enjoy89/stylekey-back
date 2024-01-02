@@ -1,12 +1,12 @@
 package com.thekey.stylekeyserver.brand.service;
 
 import com.thekey.stylekeyserver.brand.domain.Brand;
-import com.thekey.stylekeyserver.brand.domain.BrandRepository;
+import com.thekey.stylekeyserver.brand.repository.BrandRepository;
 import com.thekey.stylekeyserver.brand.dto.CreateBrandRequestDto;
 import com.thekey.stylekeyserver.brand.dto.UpdateBrandRequestDto;
 import com.thekey.stylekeyserver.exception.ErrorMessage;
 import com.thekey.stylekeyserver.stylepoint.domain.StylePoint;
-import com.thekey.stylekeyserver.stylepoint.domain.StylePointRepository;
+import com.thekey.stylekeyserver.stylepoint.repository.StylePointRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import java.util.List;
