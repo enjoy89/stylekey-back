@@ -1,7 +1,7 @@
 package com.thekey.stylekeyserver.db;
 
 import com.thekey.stylekeyserver.stylepoint.domain.StylePoint;
-import com.thekey.stylekeyserver.stylepoint.domain.StylePointRepository;
+import com.thekey.stylekeyserver.stylepoint.repository.StylePointRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
