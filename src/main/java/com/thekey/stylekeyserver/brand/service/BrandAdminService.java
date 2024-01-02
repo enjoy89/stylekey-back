@@ -8,9 +8,13 @@ import java.util.List;
 public interface BrandAdminService {
 
     Brand create(CreateBrandRequestDto requestDto);
+
     Brand findById(Long id);
+
     List<Brand> findAll();
+
     Brand update(Long id, UpdateBrandRequestDto requestDto);
+
     void delete(Long id);
 
 }
