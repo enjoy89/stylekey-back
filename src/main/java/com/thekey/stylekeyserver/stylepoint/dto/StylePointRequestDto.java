@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class UpdateStylePointRequestDto {
+public class StylePointRequestDto {
 
     private String title;
     private String description;
     private String image;
 
     @Builder
-    public UpdateStylePointRequestDto(String title, String description, String image) {
+    public StylePointRequestDto(String title, String description, String image) {
         this.title = title;
         this.description = description;
         this.image = image;

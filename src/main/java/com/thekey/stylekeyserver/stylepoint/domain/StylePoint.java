@@ -14,21 +14,21 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name="StylePoint")
+@Table(name = "StylePoint")
 public class StylePoint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "stylepoint_id")
+    @Column(name = "style_point_id")
     private Long id;
 
-    @Column(name = "stylepoint_title")
+    @Column(name = "style_point_title")
     private String title;
 
-    @Column(name = "stylepoint_description")
+    @Column(name = "style_point_description")
     private String description;
 
-    @Column(name = "stylepoint_image")
+    @Column(name = "style_point_image")
     private String image;
 
     @Builder

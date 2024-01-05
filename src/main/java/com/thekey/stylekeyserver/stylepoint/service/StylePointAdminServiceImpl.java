@@ -4,8 +4,9 @@ import com.thekey.stylekeyserver.brand.domain.Brand;
 import com.thekey.stylekeyserver.brand.repository.BrandRepository;
 import com.thekey.stylekeyserver.exception.ErrorMessage;
 import com.thekey.stylekeyserver.stylepoint.domain.StylePoint;
-import com.thekey.stylekeyserver.stylepoint.dto.UpdateStylePointRequestDto;
+import com.thekey.stylekeyserver.stylepoint.dto.StylePointRequestDto;
 import com.thekey.stylekeyserver.stylepoint.repository.StylePointRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class StylePointAdminServiceImpl implements StylePointAdminService {
     @Override
     public StylePoint findById(Long id) {
         return stylePointRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.NOT_FOUND_STYLEPOINT.get() + id));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessage.NOT_FOUND_STYLE_POINT.get() + id));
     }
 
     @Override
@@ -31,9 +32,9 @@ public class StylePointAdminServiceImpl implements StylePointAdminService {
     }
 
     @Override
-    public StylePoint update(Long id, UpdateStylePointRequestDto requestDto) {
+    public StylePoint update(Long id, StylePointRequestDto requestDto) {
         StylePoint stylePoint = stylePointRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.NOT_FOUND_STYLEPOINT.get() + id));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessage.NOT_FOUND_STYLE_POINT.get() + id));
 
         stylePoint.update(requestDto.getTitle(),
                 requestDto.getDescription(),
@@ -45,7 +46,7 @@ public class StylePointAdminServiceImpl implements StylePointAdminService {
     @Override
     public List<Brand> getBrandsByStylePointId(Long id) {
         StylePoint stylePoint = stylePointRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.NOT_FOUND_STYLEPOINT.get() + id));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessage.NOT_FOUND_STYLE_POINT.get() + id));
 
         return brandRepository.findBrandByStylePoint(stylePoint);
     }
